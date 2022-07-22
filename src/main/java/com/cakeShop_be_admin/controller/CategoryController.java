@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cakeShop_be_admin.dto.Response;
+import com.cakeShop_be_admin.dto.categoryDto.CategoryRequestDto;
 import com.cakeShop_be_admin.entites.Category;
 import com.cakeShop_be_admin.service.CategoryService;
 
@@ -33,8 +35,8 @@ public class CategoryController {
 	}
 	
 	@PostMapping("/addCategory")
-	public Category addCategory(@RequestBody Category category) {
-		return categoryService.addCategory(category);
+	public Response addCategory(@RequestBody CategoryRequestDto categoryRequestDto) {
+		return categoryService.addCategory(categoryRequestDto);
 		
 	}
 	
